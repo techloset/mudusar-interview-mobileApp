@@ -20,7 +20,9 @@ const styles = StyleSheet.create({
     },
     text: {
         fontWeight: '500',
-        fontSize: 10, lineHeight: 15,
+        fontSize: 10, lineHeight: 15
+        , fontFamily: 'Poppins-Medium'
+
 
     }
 })

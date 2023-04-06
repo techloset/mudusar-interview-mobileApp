@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Pressable, StyleSheet } from 'react-native'
+import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native'
 import Slider from './Slider'
 import Tap from '../components/taps/Tap'
 import BackIcon1 from '../assets/svg/back-arrow-blue.svg'
@@ -12,26 +12,29 @@ import Icon4 from '../assets/svg/articleIcon4.svg'
 const Articles = ({ navigation }: any) => {
     return (
         <View style={styles.parent}>
-            <View style={styles.header}>
-                <Pressable style={styles.headerIcon} onPress={() => navigation.goBack()} >
-                    <BackIcon1 />
-                </Pressable>
-                <View style={{
-                    // flex: 1
-                }}>
-                    <Text style={styles.heading}>Articles</Text>
+            <ScrollView >
+                <View style={styles.header}>
+
+                    <Pressable style={styles.headerIcon} onPress={() => navigation.goBack()} >
+                        <BackIcon1 />
+                    </Pressable>
+                    <View style={{
+                        // flex: 1
+                    }}>
+                        <Text style={styles.heading}>Articles</Text>
+                    </View>
                 </View>
-            </View>
-            <View><Text style={styles.title}>The Article Page</Text></View>
-            <View style={styles.iconsSection}>
-                <View style={styles.iconsSectionChild1}><Icon4 /><Text style={styles.iconTitle}>All</Text></View>
-                <View style={styles.iconsSectionChild1}><Icon2 /><Text style={styles.iconTitle2}>Main</Text></View>
-                <View style={styles.iconsSectionChild1}><Icon3 /><Text style={styles.iconTitle2}>Web</Text></View>
-                <View style={styles.iconsSectionChild1}><Icon1 /><Text style={styles.iconTitle2}>Other</Text></View>
-            </View>
-            <View style={styles.parent}>
-                <Slider />
-            </View>
+                <View><Text style={styles.title}>The Article Page</Text></View>
+                <View style={styles.iconsSection}>
+                    <View style={styles.iconsSectionChild1}><Icon4 /><Text style={styles.iconTitle}>All</Text></View>
+                    <View style={styles.iconsSectionChild1}><Icon2 /><Text style={styles.iconTitle2}>Main</Text></View>
+                    <View style={styles.iconsSectionChild1}><Icon3 /><Text style={styles.iconTitle2}>Web</Text></View>
+                    <View style={styles.iconsSectionChild1}><Icon1 /><Text style={styles.iconTitle2}>Other</Text></View>
+                </View>
+                <View style={styles.parent}>
+                    <Slider />
+                </View>
+            </ScrollView>
             <View >
                 <Tap />
             </View>
@@ -41,7 +44,9 @@ const Articles = ({ navigation }: any) => {
 const styles = StyleSheet.create({
     parent: {
         // marginLeft: 20,
-        flex: 1
+        flex: 1,
+        // justifyContent: 'space-between',
+        // marginBottom: '10%'
 
     },
     header: {
@@ -60,7 +65,8 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         lineHeight: 33,
         color: '#013551',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Poppins-Medium',
 
 
     }
@@ -75,26 +81,34 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginLeft: 4,
-        marginTop: 40
+        marginTop: 40,
+        fontFamily: 'Poppins-Medium',
+
     },
     title: {
         color: '#47515C',
         fontWeight: "500",
         fontSize: 14,
         lineHeight: 21,
-        marginLeft: 28
+        marginLeft: 28,
+        fontFamily: 'Poppins-Medium',
+
     },
     iconTitle: {
         fontWeight: "500",
         fontSize: 14,
         lineHeight: 21,
-        color: '#F17720'
+        color: '#F17720',
+        fontFamily: 'Poppins-Medium',
+
     },
     iconTitle2: {
         fontWeight: "500",
         fontSize: 14,
         lineHeight: 21,
-        color: '#013551'
+        color: '#013551',
+        fontFamily: 'Poppins-Medium',
+
     },
     iconsSection: {
         display: 'flex',

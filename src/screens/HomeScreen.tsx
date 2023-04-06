@@ -9,7 +9,7 @@ const HomeScreen = ({ navigation }: any) => {
             <View style={{ marginTop: 47 }}><HomeLogo /></View>
             <View style={{}}><StartScreenImg /></View>
             <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: 61 }}>
-                <Text style={{ color: '#3B4A58', fontSize: 14, lineHeight: 21, fontWeight: '500', marginHorizontal: 13, marginBottom: 21 }}>Lorem Ipsum is simply dummy text of the printing
+                <Text style={[styles.font, { color: '#3B4A58', fontSize: 14, lineHeight: 21, fontWeight: '500', marginHorizontal: 13, marginBottom: 21 }]}>Lorem Ipsum is simply dummy text of the printing
                     and  typesetting industry.  Lorem Ipsum has been
                     the industry's standard dummy text ever since</Text>
                 <CustomButton buttonStyle={styles.button} titleStyle={styles.title} color={'#F17720'} title='GET STARTED' onPress={() => { navigation.navigate('Dashboard') }}></CustomButton>
@@ -30,8 +30,14 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: '600',
         textAlign: 'center',
-        lineHeight: 21
+        lineHeight: 21,
+        fontFamily: 'Poppins-Medium',
+
     },
+    font: {
+        fontFamily: 'Poppins-Medium',
+
+    }
 });
 
 export default HomeScreen

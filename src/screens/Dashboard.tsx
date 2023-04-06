@@ -77,7 +77,7 @@ const Dashboard = () => {
                         </View>
 
                         <FlatList
-                            style={{ marginLeft: 10 }}
+                            style={{ marginLeft: 10, }}
                             data={DATA}
                             renderItem={({ item }) => <Item title={item.title} />}
                             keyExtractor={item => item.id}
@@ -136,26 +136,31 @@ const styles = StyleSheet.create({
         marginBottom: 13
     },
     heading: {
+        fontFamily: 'Poppins-Medium',
         fontSize: 22,
         fontWeight: "500",
         lineHeight: 33,
         color: '#4A4E57',
-        // fontFamily: 'Poppins-Italic'
     },
     heading2: {
         fontSize: 16,
         fontWeight: "600",
         lineHeight: 24,
-        color: '#F17720'
+        color: '#F17720',
+        fontFamily: 'Poppins-Medium',
 
     },
     interviewHeading: {
+        fontFamily: 'Poppins-Medium',
+
         fontSize: 16,
         fontWeight: "500",
         lineHeight: 24,
         color: '#2B2C46'
     },
     interviewDetial: {
+        fontFamily: 'Poppins-Medium',
+
         fontSize: 14,
         fontWeight: "400",
         lineHeight: 21,
@@ -171,6 +176,8 @@ const styles = StyleSheet.create({
     },
     title: {
         color: '#FFFFFF',
+        fontFamily: 'Poppins-Medium',
+
         fontSize: 14,
         fontWeight: '600',
         textAlign: 'center',
@@ -184,6 +191,8 @@ const styles = StyleSheet.create({
         position: 'relative'
     },
     interviewTitle: {
+        fontFamily: 'Poppins-Medium',
+
         color: '#4A4E57',
         fontSize: 18,
         fontWeight: '500',

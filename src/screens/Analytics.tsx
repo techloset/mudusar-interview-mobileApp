@@ -54,22 +54,48 @@ const Analytics = ({ navigation }: any) => {
             <View>
                 <Text style={styles.result}>Result</Text>
                 <View style={styles.progressSec1}>
-                    <Progress number={2} color={"#3BB13A"} svg={<Progress70 />} />
-                    <Progress number={1} color={"#4449D5"} svg={<Progress40 />} />
-                    <Progress number={4} color={"#F17720"} svg={<Progress100 />} />
+                    <View style={styles.progressItems}>
+                        <Progress number={2} color={"#3BB13A"} svg={<Progress70 />} />
+                    </View>
+                    <View style={styles.progressItems}>
+                        <Progress number={1} color={"#4449D5"} svg={<Progress40 />} />
+                    </View>
+                    <View style={styles.progressItems}>
+                        <Progress number={4} color={"#F17720"} svg={<Progress100 />} />
+                    </View>
+                    <View style={styles.progressItems}>
+                        <Progress number={3} color={"#DD52D7"} svg={<Progress30 />} />
+                    </View>
+                </View>
+            </View>
+            <View style={styles.progressSec1}>
+                <View style={styles.progressItems}>
                     <Progress number={3} color={"#DD52D7"} svg={<Progress30 />} />
+                </View>
+                <View style={styles.progressItems}>
+                    <Progress number={4} color={"#F17720"} svg={<Progress100 />} />
+                </View>
+                <View style={styles.progressItems}>
+                    <Progress number={1} color={"#4449D5"} svg={<Progress40 />} />
+                </View>
+                <View style={styles.progressItems}>
+                    <Progress number={2} color={"#3BB13A"} svg={<Progress70 />} />
+                </View>
+            </View>
+            <View style={styles.progressSec1}>
+                <View style={styles.progressItems}>
+                    <Progress number={1} color={"#4449D5"} svg={<Progress40 />} />
+                </View>
+                <View style={styles.progressItems}>
 
-                </View>
-                <View style={styles.progressSec1}>
-                    <Progress number={3} color={"#DD52D7"} svg={<Progress30 />} />
-                    <Progress number={4} color={"#F17720"} svg={<Progress100 />} />
-                    <Progress number={1} color={"#4449D5"} svg={<Progress40 />} />
                     <Progress number={2} color={"#3BB13A"} svg={<Progress70 />} />
                 </View>
-                <View style={styles.progressSec1}>
-                    <Progress number={1} color={"#4449D5"} svg={<Progress40 />} />
-                    <Progress number={2} color={"#3BB13A"} svg={<Progress70 />} />
+                <View style={styles.progressItems}>
+
                     <Progress number={3} color={"#DD52D7"} svg={<Progress30 />} />
+                </View>
+                <View style={styles.progressItems}>
+
                     <Progress number={4} color={"#F17720"} svg={<Progress100 />} />
                 </View>
             </View>
@@ -77,7 +103,6 @@ const Analytics = ({ navigation }: any) => {
                 <Text style={styles.summery}>Summery</Text>
                 <View style={styles.summeryBox}>
                     <View style={styles.summerInnerBox}>
-
                         <Text style={styles.summeryText}>
                             Composition with the other interviews Sub category</Text>
                     </View>
@@ -108,7 +133,7 @@ const styles = StyleSheet.create({
         lineHeight: 33,
         color: '#013551',
         textAlign: 'center'
-
+        , fontFamily: 'Poppins-Medium'
 
     }
     , headerIcon: {
@@ -123,6 +148,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginLeft: 4,
         marginTop: 40
+        , fontFamily: 'Poppins-Medium'
+
     },
     topHeading: {
         fontSize: 18,
@@ -130,6 +157,8 @@ const styles = StyleSheet.create({
         lineHeight: 27,
         color: '#F17720',
         marginLeft: 11
+        , fontFamily: 'Poppins-Medium'
+
     },
     headerTitle: {
         color: "black",
@@ -138,6 +167,8 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         lineHeight: 21,
         marginTop: 4
+        , fontFamily: 'Poppins-Medium'
+
     },
     headerTitle2: {
         color: "#2B2C46",
@@ -145,6 +176,8 @@ const styles = StyleSheet.create({
         fontWeight: "500",
         lineHeight: 27,
         marginTop: 22
+        , fontFamily: 'Poppins-Medium'
+
     },
     videoSection: {
         height: 200,
@@ -174,12 +207,16 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "700",
         lineHeight: 21,
+        fontFamily: 'Poppins-Medium'
+
     },
     btn2Title: {
         // color: "#F17720",
         fontSize: 14,
         fontWeight: "700",
-        lineHeight: 21,
+        lineHeight: 21
+        , fontFamily: 'Poppins-Medium'
+
     },
     videoSectionContent: {
         flex: 1,
@@ -199,15 +236,22 @@ const styles = StyleSheet.create({
         fontWeight: "500",
         lineHeight: 27,
         marginTop: 22,
-        marginLeft: 3
+        marginLeft: 3,
+        fontFamily: 'Poppins-Medium'
+
     },
     progressSec1: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
+        alignItems: 'center',
         gap: 14,
-        marginTop: 10
+        marginTop: 10,
+        width: '100%'
 
+    },
+    progressItems: {
+        width: '22%'
     },
     summery: {
         color: "#2B2C46",
@@ -216,12 +260,16 @@ const styles = StyleSheet.create({
         lineHeight: 27,
         marginTop: 22,
         marginLeft: 3
+        , fontFamily: 'Poppins-Medium'
+
     },
     summeryText: {
         color: "#2B2C46",
         fontSize: 17,
         fontWeight: "500",
-        lineHeight: 25,
+        lineHeight: 25
+        , fontFamily: 'Poppins-Medium'
+
     },
     summeryBox: {
         borderRadius: 5,

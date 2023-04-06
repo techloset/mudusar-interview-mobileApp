@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, SafeAreaView, ImageBackground } from 'react-native';
+import { Text, View, SafeAreaView, ImageBackground, StyleSheet } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 const Slider = () => {
@@ -43,8 +43,8 @@ const Slider = () => {
                         marginRight: 36,
                     }}>
 
-                    <Text style={{ lineHeight: 24, fontSize: 16, color: '#013551', fontWeight: '600', }}>{item.title}</Text>
-                    <Text style={{ lineHeight: 24, fontSize: 13, color: '#013551', fontWeight: '400', marginTop: 12 }}>{item.text}</Text>
+                    <Text style={[styles.font, { lineHeight: 24, fontSize: 16, color: '#013551', fontWeight: '600', }]}>{item.title}</Text>
+                    <Text style={[styles.font, { lineHeight: 24, fontSize: 13, color: '#013551', fontWeight: '400', marginTop: 12 }]}>{item.text}</Text>
                 </View>
             </ImageBackground>
         );
@@ -87,5 +87,10 @@ const Slider = () => {
         </SafeAreaView>
     );
 };
+const styles = StyleSheet.create({
+    font: {
+        fontFamily: 'Poppins-Medium',
 
+    }
+})
 export default Slider;
