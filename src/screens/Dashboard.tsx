@@ -100,7 +100,6 @@ const Dashboard = () => {
                     </View>
                 </ScrollView>
                 <View >
-
                     <Tap />
                 </View>
             </View>
