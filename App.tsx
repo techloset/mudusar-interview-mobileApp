@@ -6,6 +6,7 @@ import Articles from './src/screens/Articles';
 import Analytics from './src/screens/Analytics';
 import HomeScreen from './src/screens/HomeScreen'
 import Dashboard from './src/screens/Dashboard';
+import { SafeAreaView } from 'react-native';
 const Stack = createNativeStackNavigator();
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Stack.Screen name="Articles" component={Articles} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer >
   );
 }
 

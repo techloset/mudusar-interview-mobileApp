@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     Alert, View, Text, StyleSheet, Image, ImageBackground,
-    ScrollView, Pressable, Touchable
+    ScrollView, Pressable, Touchable, StatusBar, SafeAreaView
 } from 'react-native'
 import CustomButton from '../components/button/Button'
 import Progress from '../components/progress/Progress'
@@ -18,97 +18,112 @@ const Analytics = ({ navigation }: any) => {
     //     navigation.navigate('HomeScreen')
     // }
     return (
-        <ScrollView style={styles.parent}>
-            <View style={styles.header}>
-                <Pressable style={styles.headerIcon} onPress={() => navigation.goBack()} >
-                    <BackIcon1 />
-                </Pressable>
-                <View style={{
-                    // flex: 1
-                }}>
-                    <Text style={styles.heading}>Analytics</Text>
-                </View>
-                <View style={{ width: 30 }} />
-            </View>
-            <View><View style={styles.headerHeading}>
-                <BackIcon2 />
-                {/* <Image source={require('../assets/images/analytics/back-arrow-orange.png')}></Image> */}
-                <Text style={styles.topHeading}> Job interview</Text>
-            </View>
-                <Text style={styles.headerTitle}>01.  What are your weaknesses?</Text>
-                <Text style={styles.headerTitle2}>Video</Text>
-                <ImageBackground source={require('../assets/images/analytics/videoImg.png')}
-                    style={styles.videoSection}>
-                    <View style={styles.videoSectionContent}>
-                        <PlayButton style={styles.vedioPlayButton} />
-                        <CustomButton title='Cancel' buttonStyle={styles.btn1}
-                            titleStyle={styles.btn1Title} ></CustomButton>
-                        <CustomButton title='NEXT' buttonStyle={styles.btn2}
-                            titleStyle={styles.btn2Title} ></CustomButton>
-                        <CustomButton title='Retry' buttonStyle={styles.btn3}
-                            titleStyle={styles.btn2Title} ></CustomButton>
+        <>
+            <StatusBar backgroundColor={'transparent'} />
+            <SafeAreaView style={{
+                flex: 1
+            }}>
+                <ImageBackground source={require('../assets/images/analytics/bgImg.png')}>
+                    <View style={styles.header}>
+                        <Pressable style={styles.headerIcon} onPress={() => navigation.goBack()} >
+                            <BackIcon1 />
+                        </Pressable>
+                        <View style={{
+                            // flex: 1
+                        }}>
+                            <Text style={styles.heading}>Analytics</Text>
+                        </View>
+                        <View style={{ width: 30 }} />
                     </View>
+                    <ScrollView >
+                        <View style={styles.parent}>
+
+                            <View><View style={styles.headerHeading}>
+                                <BackIcon2 />
+                                {/* <Image source={require('../assets/images/analytics/back-arrow-orange.png')}></Image> */}
+                                <Text style={styles.topHeading}> Job interview</Text>
+                            </View>
+                                <Text style={styles.headerTitle}>01.  What are your weaknesses?</Text>
+                                <Text style={styles.headerTitle2}>Video</Text>
+                                <View style={{ borderRadius: 50, borderColor: 'red' }}>
+
+                                    <ImageBackground imageStyle={{ borderRadius: 5 }} source={require('../assets/images/analytics/videoImg.png')}
+                                        style={[styles.videoSection,]}>
+                                        <View style={styles.videoSectionContent}>
+                                            <PlayButton style={styles.vedioPlayButton} />
+                                            <CustomButton title='Cancel' buttonStyle={styles.btn1}
+                                                titleStyle={styles.btn1Title} ></CustomButton>
+                                            <CustomButton title='NEXT' buttonStyle={styles.btn2}
+                                                titleStyle={styles.btn2Title} ></CustomButton>
+                                            <CustomButton title='Retry' buttonStyle={styles.btn3}
+                                                titleStyle={styles.btn2Title} ></CustomButton>
+                                        </View>
+                                    </ImageBackground>
+                                </View>
+                            </View>
+                            {/* /////////////////////// progress seciton//////////////////////////// */}
+                            <View>
+                                <Text style={styles.result}>Result</Text>
+                                <View style={styles.progressSec1}>
+                                    <View style={styles.progressItems}>
+                                        <Progress number={2} color={"#3BB13A"} source={require('../assets/images/analytics/p70.png')} />
+                                    </View>
+                                    <View style={styles.progressItems}>
+                                        <Progress number={1} color={"#4449D5"} source={require('../assets/images/analytics/p40.png')} />
+                                    </View>
+                                    <View style={styles.progressItems}>
+                                        <Progress number={4} color={"#F17720"} source={require('../assets/images/analytics/p100.png')} />
+                                    </View>
+                                    <View style={styles.progressItems}>
+                                        <Progress number={3} color={"#DD52D7"} source={require('../assets/images/analytics/p30.png')} />
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.progressSec1}>
+                                <View style={styles.progressItems}>
+                                    <Progress number={3} color={"#DD52D7"} source={require('../assets/images/analytics/p30.png')} />
+                                </View>
+                                <View style={styles.progressItems}>
+                                    <Progress number={4} color={"#F17720"} source={require('../assets/images/analytics/p100.png')} />
+                                </View>
+                                <View style={styles.progressItems}>
+                                    <Progress number={1} color={"#4449D5"} source={require('../assets/images/analytics/p40.png')} />
+                                </View>
+                                <View style={styles.progressItems}>
+                                    <Progress number={2} color={"#3BB13A"} source={require('../assets/images/analytics/p70.png')} />
+                                </View>
+                            </View>
+                            <View style={styles.progressSec1}>
+                                <View style={styles.progressItems}>
+                                    <Progress number={1} color={"#4449D5"} source={require('../assets/images/analytics/p40.png')} />
+                                </View>
+                                <View style={styles.progressItems}>
+
+                                    <Progress number={2} color={"#3BB13A"} source={require('../assets/images/analytics/p70.png')} />
+                                </View>
+                                <View style={styles.progressItems}>
+
+                                    <Progress number={3} color={"#DD52D7"} source={require('../assets/images/analytics/p30.png')} />
+                                </View>
+                                <View style={styles.progressItems}>
+
+                                    <Progress number={4} color={"#F17720"} source={require('../assets/images/analytics/p100.png')} />
+                                </View>
+                            </View>
+                            <View>
+                                <Text style={styles.summery}>Summery</Text>
+                                <View style={styles.summeryBox}>
+                                    <View style={styles.summerInnerBox}>
+                                        <Text style={styles.summeryText}>
+                                            Composition with the other interviews Sub category</Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+                    </ScrollView>
                 </ImageBackground>
-            </View>
-            {/* /////////////////////// progress seciton//////////////////////////// */}
-            <View>
-                <Text style={styles.result}>Result</Text>
-                <View style={styles.progressSec1}>
-                    <View style={styles.progressItems}>
-                        <Progress number={2} color={"#3BB13A"} svg={<Progress70 />} />
-                    </View>
-                    <View style={styles.progressItems}>
-                        <Progress number={1} color={"#4449D5"} svg={<Progress40 />} />
-                    </View>
-                    <View style={styles.progressItems}>
-                        <Progress number={4} color={"#F17720"} svg={<Progress100 />} />
-                    </View>
-                    <View style={styles.progressItems}>
-                        <Progress number={3} color={"#DD52D7"} svg={<Progress30 />} />
-                    </View>
-                </View>
-            </View>
-            <View style={styles.progressSec1}>
-                <View style={styles.progressItems}>
-                    <Progress number={3} color={"#DD52D7"} svg={<Progress30 />} />
-                </View>
-                <View style={styles.progressItems}>
-                    <Progress number={4} color={"#F17720"} svg={<Progress100 />} />
-                </View>
-                <View style={styles.progressItems}>
-                    <Progress number={1} color={"#4449D5"} svg={<Progress40 />} />
-                </View>
-                <View style={styles.progressItems}>
-                    <Progress number={2} color={"#3BB13A"} svg={<Progress70 />} />
-                </View>
-            </View>
-            <View style={styles.progressSec1}>
-                <View style={styles.progressItems}>
-                    <Progress number={1} color={"#4449D5"} svg={<Progress40 />} />
-                </View>
-                <View style={styles.progressItems}>
-
-                    <Progress number={2} color={"#3BB13A"} svg={<Progress70 />} />
-                </View>
-                <View style={styles.progressItems}>
-
-                    <Progress number={3} color={"#DD52D7"} svg={<Progress30 />} />
-                </View>
-                <View style={styles.progressItems}>
-
-                    <Progress number={4} color={"#F17720"} svg={<Progress100 />} />
-                </View>
-            </View>
-            <View>
-                <Text style={styles.summery}>Summery</Text>
-                <View style={styles.summeryBox}>
-                    <View style={styles.summerInnerBox}>
-                        <Text style={styles.summeryText}>
-                            Composition with the other interviews Sub category</Text>
-                    </View>
-                </View>
-            </View>
-        </ScrollView>
+            </SafeAreaView>
+        </>
     )
 }
 const styles = StyleSheet.create({
@@ -119,6 +134,7 @@ const styles = StyleSheet.create({
 
     },
     header: {
+        marginHorizontal: 18,
         marginTop: 39,
         // backgroundColor: 'green',
         display: 'flex',
@@ -181,7 +197,10 @@ const styles = StyleSheet.create({
     },
     videoSection: {
         height: 200,
-        marginTop: 14
+        marginTop: 14,
+        borderRadius: 10,
+        // borderWidth: 4,
+        // borderColor: 'red'
     },
     btn1: {
         paddingHorizontal: 23,
@@ -211,7 +230,7 @@ const styles = StyleSheet.create({
 
     },
     btn2Title: {
-        // color: "#F17720",
+        color: "white",
         fontSize: 14,
         fontWeight: "700",
         lineHeight: 21
@@ -251,7 +270,8 @@ const styles = StyleSheet.create({
 
     },
     progressItems: {
-        width: '22%'
+        width: '22%',
+
     },
     summery: {
         color: "#2B2C46",
@@ -272,16 +292,34 @@ const styles = StyleSheet.create({
 
     },
     summeryBox: {
+        backgroundColor: '#FDF7F2',
+        margin: 3,
         borderRadius: 5,
         padding: 15,
-        backgroundColor: '#FDF7F2',
-        marginTop: 10
+        elevation: 5,
+        marginBottom: 90
     },
     summerInnerBox: {
         backgroundColor: 'white',
-        paddingHorizontal: 10,
-        paddingVertical: 20,
-        borderRadius: 5
+        borderRadius: 5,
+        padding: 20,
+        elevation: 10,
+        shadowOpacity: 1.2,
+        shadowOffset: { width: -20, height: -20 }
+
     }
 })
 export default Analytics
+///////////////////// box shadow //////////////////// code
+// container: {
+//     backgroundColor: 'pink',
+//     borderRadius: 10,
+//     padding: 20,
+//     elevation: 10,
+//     shadowOffset: {
+//       width: -20,
+//       height: -20,
+//     },
+//     shadowColor: 'pink',
+//     shadowOpacity: 1,
+//   },

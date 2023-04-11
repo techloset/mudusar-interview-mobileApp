@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native'
 const Progress = (props: any) => {
     return (
         <View style={styles.parent}>
-            {props.svg}
+            <Image style={{ height: 84, width: 84 }} source={props.source}></Image>
             <Text style={[styles.text, { color: props.color }]}>Expression {props.number}</Text>
         </View>
     )

@@ -12,18 +12,18 @@ import Icon4 from '../assets/svg/articleIcon4.svg'
 const Articles = ({ navigation }: any) => {
     return (
         <View style={styles.parent}>
-            <ScrollView >
-                <View style={styles.header}>
+            <View style={styles.header}>
 
-                    <Pressable style={styles.headerIcon} onPress={() => navigation.goBack()} >
-                        <BackIcon1 />
-                    </Pressable>
-                    <View style={{
-                        // flex: 1
-                    }}>
-                        <Text style={styles.heading}>Articles</Text>
-                    </View>
+                <Pressable style={styles.headerIcon} onPress={() => navigation.goBack()} >
+                    <BackIcon1 />
+                </Pressable>
+                <View style={{
+                    // flex: 1
+                }}>
+                    <Text style={styles.heading}>Articles</Text>
                 </View>
+            </View>
+            <ScrollView >
                 <View><Text style={styles.title}>The Article Page</Text></View>
                 <View style={styles.iconsSection}>
                     <View style={styles.iconsSectionChild1}><Icon4 /><Text style={styles.iconTitle}>All</Text></View>
