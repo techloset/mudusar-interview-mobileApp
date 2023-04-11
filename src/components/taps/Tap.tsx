@@ -6,18 +6,16 @@ import Icon4 from '../../assets/svg/tap-icon4.svg'
 import Plus from '../../assets/svg/plusIcon.svg'
 import { View, StyleSheet, ImageBackground, Text, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import BgImg from '../../assets/svg/tapBg.svg'
+import BgImg from '../../assets/svg/tapBg-cropped.svg'
 import Svg, { Image } from 'react-native-svg'
 // declare const BgImg: any;
 const Tap = () => {
     const navigation: any = useNavigation()
     return (
         <View>
-            {/* <Svg> */}
 
-            <BgImg width='100%' style={{ position: 'absolute', bottom: 0 }} />
-            {/* <Image href={BgImg} /> */}
-            {/* </Svg> */}
+            {/* <BgImg width='100%' height='100%' style={{ position: 'absolute', bottom: 0 }} /> */}
+
 
             <View style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'transparent', zIndex: 2 }}>
 
@@ -25,10 +23,9 @@ const Tap = () => {
                     backgroundColor: '#FB7C00', borderRadius: 50, position: 'absolute', padding: 27, zIndex: 2, bottom: '45%',
 
                 }]}>
-                    {/* <Text style={{ fontSize: 60, color: 'white' }}>+</Text> */}
                     <Plus />
                 </View>
-                <View style={{ width: '100%', height: 77, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }} >
+                <ImageBackground source={require('../../assets/images/Tap-bgImg.png')} style={{ width: '100%', height: 77, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }} >
                     <View style={{ paddingLeft: 28, display: 'flex', gap: 47, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }} >
                         <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}><Icon1 /></TouchableOpacity>
                         <TouchableOpacity onPress={() => navigation.navigate('Articles')}><Icon2 /></TouchableOpacity>
@@ -37,7 +34,7 @@ const Tap = () => {
                         <TouchableOpacity onPress={() => navigation.navigate('Analytics')}><Icon3 /></TouchableOpacity>
                         <TouchableOpacity><Icon4 /></TouchableOpacity>
                     </View>
-                </View>
+                </ImageBackground>
             </View>
         </View>
 

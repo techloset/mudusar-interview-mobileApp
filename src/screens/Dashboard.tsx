@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginHorizontal: 20,
         alignItems: 'center',
-        marginTop: 30,
+        marginTop: 26,
         // marginBottom: 13
     },
     header2: {
