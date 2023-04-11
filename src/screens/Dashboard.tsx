@@ -58,7 +58,7 @@ const Dashboard = () => {
                 <Text style={styles.heading2}>30 C</Text>
             </View>
             <ScrollView style={styles.child1}>
-                <View style={styles.header}>
+                <View style={styles.header1}>
                     <Text style={styles.interviewHeading}>Last Interview</Text>
                     <Text style={styles.interviewDetial}>Details <ForwardIcon /></Text>
                 </View>
@@ -132,6 +132,15 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         alignItems: 'center',
         marginTop: 60,
+        // marginBottom: 13
+    },
+    header1: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 20,
+        alignItems: 'center',
+        marginTop: 30,
         // marginBottom: 13
     },
     header2: {
