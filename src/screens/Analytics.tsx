@@ -203,6 +203,8 @@ const styles = StyleSheet.create({
         height: 200,
         marginTop: 14,
         borderRadius: 10,
+        width: '100%', overflow: 'hidden'
+
         // borderWidth: 4,
         // borderColor: 'red'
     },
@@ -249,8 +251,10 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
         marginBottom: 15,
         gap: 12,
-        paddingLeft: 10
-        // backgroundColor: 'red'
+        paddingLeft: 10,
+        width: '100%'
+        // backgroundColor: 'red',
+
     },
     vedioPlayButton: {
         position: 'absolute',
