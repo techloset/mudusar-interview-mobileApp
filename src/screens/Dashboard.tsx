@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useMemo } from 'react';
+import { useIsFocused } from '@react-navigation/native'
 import { View, Text, StyleSheet, FlatList, Image, ScrollView, ImageBackground, StatusBar } from 'react-native'
 import ForwardIcon from '../assets/svg/forwardArrow.svg'
 import Tap from '../components/taps/Tap'
@@ -8,8 +9,16 @@ import InterviewImg1 from '../assets/svg/interviewImg1.svg'
 import InterviewImg2 from '../assets/svg/interviewImg2.svg'
 import InterviewImg3 from '../assets/svg/interviewImg3.svg'
 import InterviewImg4 from '../assets/svg/interviewImg4.svg'
+import LinearGradient from 'react-native-linear-gradient'
 // import { Image } from 'react-native-svg'
 const Dashboard = () => {
+    // useEffect(() => {
+    //     isFocused ?
+    //         <Tap text={'ali'} /> : <Tap text={'mudusar'} />
+    // }, [])
+    const isFocused = useIsFocused()
+    console.log(isFocused)
+    // const text = useMemo(() => isFocused ? 'ali' : 'mudusar', [isFocused]);
     const DATA = [
         {
             id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -52,72 +61,83 @@ const Dashboard = () => {
 
         <View style={styles.parent}>
             <StatusBar translucent backgroundColor={'transparent'} />
-            {/* <ImageBackground imageStyle={{ zIndex: 1 }} source={require('../assets/images/bgImg.png')}> */}
             <View style={styles.header}>
                 <Text style={styles.heading}>Dashboard</Text>
                 <Text style={styles.heading2}>30 C</Text>
             </View>
             <ScrollView style={styles.child1}>
-                <View style={styles.header1}>
-                    <Text style={styles.interviewHeading}>Last Interview</Text>
-                    <Text style={styles.interviewDetial}>Details <ForwardIcon /></Text>
-                </View>
-                <View style={styles.interviewSection}>
-                    <Image style={{ position: 'absolute', right: 0, top: '-5%', }} source={require('../assets/images/orange-color.png')}></Image>
-                    <Image style={{ position: 'absolute', right: 156, top: 26, height: 66, width: 66 }} source={require('../assets/images/orange-color.png')}></Image>
-                    <Image style={{ position: 'absolute', left: 14, top: 20, height: 90, width: 95 }} source={require('../assets/images/orange-color.png')}></Image>
-                    <Image style={{ position: 'absolute', left: 7, top: 132, height: 69, width: 71 }} source={require('../assets/images/orange-color.png')}></Image>
-                    <Image style={{ position: 'absolute', left: 71, bottom: 9, height: 51, width: 54 }} source={require('../assets/images/orange-color.png')}></Image>
-                    <Image style={{ position: 'absolute', right: 24, bottom: 0, height: 90, width: 95 }} source={require('../assets/images/orange-color.png')}></Image>
-                    <Image style={{ position: 'absolute', right: 16, bottom: 91, height: 47, width: 50 }} source={require('../assets/images/orange-color.png')}></Image>
-                    <Image style={{ position: 'absolute', right: 156, bottom: 70, height: 51, width: 54 }} source={require('../assets/images/orange-color.png')}></Image>
-                    <Text style={styles.interviewTitle}>Try Your First Interview {"\n"}
-                        for free</Text>
-                    <CustomButton title='START' buttonStyle={styles.button} titleStyle={styles.title} />
-                </View>
-                <ImageBackground imageStyle={{ zIndex: 1, opacity: 0.2 }} source={require('../assets/images/bgImg1.png')}>
-
-                    <View>
-                        <View style={styles.header2}>
-                            <Text style={styles.interviewHeading}>Interview</Text>
-                            <Text style={styles.interviewDetial1}>More <ForwardIcon /></Text>
-                        </View>
-
-                        <FlatList
-                            style={{ marginLeft: 20, }}
-                            data={DATA}
-                            renderItem={({ item }) => <Item title={item.title} />}
-                            keyExtractor={item => item.id}
-                            horizontal={true}
-                        />
+                <LinearGradient colors={['#F5F1F0', '#F2F3F8', '#F2F3F8']}>
+                    <View style={styles.header1}>
+                        <Text style={styles.interviewHeading}>Last Interview</Text>
+                        <Text style={styles.interviewDetial}>Details <ForwardIcon /></Text>
                     </View>
-                    <View>
-                        <View style={styles.header2}>
-                            <Text style={styles.interviewHeading}>Interview by Category</Text>
-                            <Text style={styles.interviewDetial1}>More <ForwardIcon /></Text>
-                        </View>
-
-                        <FlatList
-                            style={{ marginLeft: 20, marginBottom: '20%' }}
-                            data={newData}
-                            renderItem={({ item }) => newItem({ title: item.title })}
-                            keyExtractor={item => item.id}
-                            horizontal={true}
-                        />
+                    <View style={styles.interviewSection}>
+                        <Image style={{ position: 'absolute', right: 0, top: '-5%', }} source={require('../assets/images/orange-color.png')}></Image>
+                        <Image style={{ position: 'absolute', right: 156, top: 26, height: 66, width: 66 }} source={require('../assets/images/orange-color.png')}></Image>
+                        <Image style={{ position: 'absolute', left: 14, top: 20, height: 90, width: 95 }} source={require('../assets/images/orange-color.png')}></Image>
+                        <Image style={{ position: 'absolute', left: 7, top: 132, height: 69, width: 71 }} source={require('../assets/images/orange-color.png')}></Image>
+                        <Image style={{ position: 'absolute', left: 71, bottom: 9, height: 51, width: 54 }} source={require('../assets/images/orange-color.png')}></Image>
+                        <Image style={{ position: 'absolute', right: 24, bottom: 0, height: 90, width: 95 }} source={require('../assets/images/orange-color.png')}></Image>
+                        <Image style={{ position: 'absolute', right: 16, bottom: 91, height: 47, width: 50 }} source={require('../assets/images/orange-color.png')}></Image>
+                        <Image style={{ position: 'absolute', right: 156, bottom: 70, height: 51, width: 54 }} source={require('../assets/images/orange-color.png')}></Image>
+                        <Text style={styles.interviewTitle}>Try Your First Interview {"\n"}
+                            for free</Text>
+                        <CustomButton title='START' buttonStyle={styles.button} titleStyle={styles.title} />
                     </View>
-                </ImageBackground>
+                    <ImageBackground imageStyle={{ zIndex: 1, opacity: 0.2 }} source={require('../assets/images/bgImg1.png')}>
+
+                        <View>
+                            <View style={styles.header2}>
+                                <Text style={styles.interviewHeading}>Interviews</Text>
+                                <Text style={styles.interviewDetial1}>More <ForwardIcon /></Text>
+                            </View>
+
+                            <FlatList
+                                style={{ marginLeft: 20, }}
+                                data={DATA}
+                                renderItem={({ item }) => <Item title={item.title} />}
+                                keyExtractor={item => item.id}
+                                horizontal={true}
+                            />
+                        </View>
+                        <View>
+                            <View style={styles.header2}>
+                                <Text style={styles.interviewHeading}>Interview by Category</Text>
+                                <Text style={styles.interviewDetial1}>More <ForwardIcon /></Text>
+                            </View>
+
+                            <FlatList
+                                style={{ marginLeft: 20, marginBottom: '20%' }}
+                                data={newData}
+                                renderItem={({ item }) => newItem({ title: item.title })}
+                                keyExtractor={item => item.id}
+                                horizontal={true}
+                            />
+                        </View>
+                    </ImageBackground>
+                </LinearGradient>
             </ScrollView>
-            <View >
-                <Tap />
-            </View>
+            <ImageBackground imageStyle={{ opacity: 0.2 }} source={require('../assets/images/bgImg1.png')}>
+
+                <View >
+                    {isFocused &&
+                        <Tap active='dashboard' />
+                    }
+                    {/* {!isFocused ?
+                        <Tap text={'ali'} /> : <Tap text={'mudusar'} />
+                    } */}
+                    {/* <Tap text={isFocused == true ? 'ali' : 'mudusar'} /> */}
+                </View>
+            </ImageBackground>
         </View>
+
     )
 }
 const styles = StyleSheet.create({
     parent: {
         flex: 1,
-        // justifyContent: 'space-between',
-        // backgroundColor: '#F2F3F8'
+        justifyContent: 'space-between',
+        backgroundColor: '#F5F1F0'
         // alignItems: 'center'
     },
     child1: {
@@ -133,6 +153,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 60,
         // marginBottom: 13
+        // backgroundColor: '#F5F1F2'
     },
     header1: {
         display: 'flex',
@@ -179,7 +200,7 @@ const styles = StyleSheet.create({
         color: '#2B2C46'
     },
     interviewDetial: {
-        fontFamily: 'Poppins-Medium',
+        fontFamily: 'Poppins-Regular',
 
         fontSize: 14,
         fontWeight: "400",
@@ -188,7 +209,7 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
     interviewDetial1: {
-        fontFamily: 'Poppins-Medium',
+        fontFamily: 'Poppins-Regular',
 
         fontSize: 14,
         fontWeight: "400",
@@ -200,7 +221,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F17720',
         paddingVertical: 13,
         paddingHorizontal: 49,
-        borderRadius: 5,
+        borderRadius: 3,
         marginTop: 29,
         marginBottom: 59
     },
@@ -209,7 +230,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Medium',
 
         fontSize: 14,
-        fontWeight: '600',
+        fontWeight: '700',
         textAlign: 'center',
         lineHeight: 21
     },

@@ -19,23 +19,25 @@ const Analytics = ({ navigation }: any) => {
     // }
     return (
         <>
-            <StatusBar backgroundColor={'transparent'} />
+
+            <StatusBar backgroundColor={'#FFF9F4'} />
             <SafeAreaView style={{
                 flex: 1
             }}>
-                <ImageBackground source={require('../assets/images/analytics/bgImg.png')}>
-                    <View style={styles.header}>
-                        <Pressable style={styles.headerIcon} onPress={() => navigation.goBack()} >
-                            <BackIcon1 />
-                        </Pressable>
-                        <View style={{
-                            // flex: 1
-                        }}>
-                            <Text style={styles.heading}>Analytics</Text>
+
+                <ScrollView >
+                    <ImageBackground imageStyle={{ marginBottom: 80 }} source={require('../assets/images/analytics/bgImg.png')}>
+                        <View style={styles.header}>
+                            <Pressable style={styles.headerIcon} onPress={() => navigation.goBack()} >
+                                <BackIcon1 />
+                            </Pressable>
+                            <View style={{
+                                // flex: 1
+                            }}>
+                                <Text style={styles.heading}>Analytics</Text>
+                            </View>
+                            <View style={{ width: 30 }} />
                         </View>
-                        <View style={{ width: 30 }} />
-                    </View>
-                    <ScrollView >
                         <View style={styles.parent}>
 
                             <View><View style={styles.headerHeading}>
@@ -110,18 +112,19 @@ const Analytics = ({ navigation }: any) => {
                                     <Progress number={4} color={"#F17720"} source={require('../assets/images/analytics/p100.png')} />
                                 </View>
                             </View>
-                            <View>
+                            <View style={{}}>
                                 <Text style={styles.summery}>Summery</Text>
                                 <View style={styles.summeryBox}>
                                     <View style={styles.summerInnerBox}>
+                                        <View style={styles.summeryDiv}></View>
                                         <Text style={styles.summeryText}>
                                             Composition with the other interviews Sub category</Text>
                                     </View>
                                 </View>
                             </View>
                         </View>
-                    </ScrollView>
-                </ImageBackground>
+                    </ImageBackground>
+                </ScrollView>
             </SafeAreaView>
         </>
     )
@@ -134,13 +137,14 @@ const styles = StyleSheet.create({
 
     },
     header: {
-        marginHorizontal: 18,
-        marginTop: 39,
+        paddingHorizontal: 18,
+        paddingTop: 39,
         // backgroundColor: 'green',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        // backgroundColor: 'rgba(239, 228, 220, 0.7)'
 
     },
     heading: {
@@ -149,7 +153,7 @@ const styles = StyleSheet.create({
         lineHeight: 33,
         color: '#013551',
         textAlign: 'center'
-        , fontFamily: 'Poppins-Medium'
+        , fontFamily: 'Poppins-SemiBold'
 
     }
     , headerIcon: {
@@ -173,7 +177,7 @@ const styles = StyleSheet.create({
         lineHeight: 27,
         color: '#F17720',
         marginLeft: 11
-        , fontFamily: 'Poppins-Medium'
+        , fontFamily: 'Poppins-SemiBold'
 
     },
     headerTitle: {
@@ -183,7 +187,7 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         lineHeight: 21,
         marginTop: 4
-        , fontFamily: 'Poppins-Medium'
+        , fontFamily: 'Poppins-SemiBold'
 
     },
     headerTitle2: {
@@ -203,7 +207,7 @@ const styles = StyleSheet.create({
         // borderColor: 'red'
     },
     btn1: {
-        paddingHorizontal: 23,
+        paddingHorizontal: 24,
         paddingVertical: 7,
         backgroundColor: '#FBE0CA',
         borderRadius: 5
@@ -239,11 +243,14 @@ const styles = StyleSheet.create({
     },
     videoSectionContent: {
         flex: 1,
+        // display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'flex-end',
         marginBottom: 15,
-        gap: 12
+        gap: 12,
+        paddingLeft: 10
+        // backgroundColor: 'red'
     },
     vedioPlayButton: {
         position: 'absolute',
@@ -288,7 +295,12 @@ const styles = StyleSheet.create({
         fontSize: 17,
         fontWeight: "500",
         lineHeight: 25
-        , fontFamily: 'Poppins-Medium'
+        , fontFamily: 'Poppins-Medium',
+        margin: 20,
+        // paddingBottom: 20,
+        // backgroundColor: 'red',
+        height: 50
+
 
     },
     summeryBox: {
@@ -297,16 +309,34 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 15,
         elevation: 5,
-        marginBottom: 90
+
+        // marginBottom: 90
     },
     summerInnerBox: {
         backgroundColor: 'white',
         borderRadius: 5,
-        padding: 20,
-        elevation: 10,
+        // padding: 20,
+        elevation: 1,
         shadowOpacity: 1.2,
-        shadowOffset: { width: -20, height: -20 }
-
+        shadowOffset: { width: -20, height: -20 },
+        overflow: 'hidden',
+        borderWidth: 1,
+        borderColor: 'whitesmoke'
+    },
+    summeryDiv: {
+        backgroundColor: 'transparent',
+        borderRadius: 10,
+        // padding: 2,
+        height: 5,
+        marginTop: -10,
+        elevation: 7,
+        // shadowOffset: {
+        //     width: -20,
+        //     height: -20,
+        // },
+        shadowColor: 'black',
+        shadowOpacity: 1,
+        // margin: 10
     }
 })
 export default Analytics

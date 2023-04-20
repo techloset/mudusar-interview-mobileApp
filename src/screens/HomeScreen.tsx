@@ -11,10 +11,11 @@ const HomeScreen = ({ navigation }: any) => {
                     <StatusBar backgroundColor={'#F2F3F8'} barStyle='dark-content' />
                     <View style={{ marginTop: 27 }}><HomeLogo /></View>
 
-                    <View style={{ marginTop: 147 }}><StartScreenImg /></View>
+                    <View style={{ marginTop: 130, paddingHorizontal: 8, width: '100%' }}><StartScreenImg width={'100%'} /></View>
                     <ImageBackground imageStyle={{ opacity: 0.6 }} source={require('../assets/images/homeBgImg.png')}>
                         <View style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 61, marginTop: 113 }}>
-                            <Text style={[styles.font, { color: '#3B4A58', fontSize: 13, lineHeight: 21, fontWeight: '500', marginBottom: 21, }]}>Lorem Ipsum is simply dummy text of the printing
+                            <Text style={[styles.font, { color: '#3B4A58', fontSize: 13, lineHeight: 21, fontWeight: '500', marginBottom: 21, }]}>
+                                Lorem Ipsum is simply dummy text of the printing
                                 and  typesetting industry.  Lorem Ipsum has been
                                 the industry's standard dummy text ever since</Text>
                             <CustomButton buttonStyle={styles.button} titleStyle={styles.title} color={'#F17720'} title='GET STARTED' onPress={() => { navigation.navigate('Dashboard') }}></CustomButton>
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F17720',
         paddingVertical: 13,
         paddingHorizontal: 60,
-        borderRadius: 5,
+        borderRadius: 3,
 
     },
     title: {

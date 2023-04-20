@@ -1,4 +1,6 @@
 import React from 'react'
+import { useIsFocused } from '@react-navigation/native'
+
 import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native'
 import Slider from './Slider'
 import Tap from '../components/taps/Tap'
@@ -10,6 +12,8 @@ import Icon4 from '../assets/svg/articleIcon4.svg'
 
 
 const Articles = ({ navigation }: any) => {
+    const isFocused = useIsFocused()
+
     return (
         <View style={styles.parent}>
             <View style={styles.header}>
@@ -36,7 +40,9 @@ const Articles = ({ navigation }: any) => {
                 </View>
             </ScrollView>
             <View >
-                <Tap />
+                {isFocused &&
+                    <Tap active='article' />
+                }
             </View>
         </View>
     )
@@ -66,7 +72,7 @@ const styles = StyleSheet.create({
         lineHeight: 33,
         color: '#013551',
         textAlign: 'center',
-        fontFamily: 'Poppins-Medium',
+        fontFamily: 'Poppins-SemiBold',
 
 
     }
