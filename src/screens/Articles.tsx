@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
         flex: 1,
         // justifyContent: 'space-between',
         // marginBottom: '10%'
+        backgroundColor: 'white'
 
     },
     header: {

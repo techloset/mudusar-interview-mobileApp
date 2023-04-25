@@ -291,7 +291,8 @@ const styles = StyleSheet.create({
         lineHeight: 27,
         marginTop: 22,
         marginLeft: 3
-        , fontFamily: 'Poppins-Medium'
+        , fontFamily: 'Poppins-Medium',
+        marginBottom: 10
 
     },
     summeryText: {
