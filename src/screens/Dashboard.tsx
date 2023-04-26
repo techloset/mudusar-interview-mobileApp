@@ -98,6 +98,7 @@ const Dashboard = () => {
                                 renderItem={({ item }) => <Item title={item.title} />}
                                 keyExtractor={item => item.id}
                                 horizontal={true}
+                                showsHorizontalScrollIndicator={false}
                             />
                         </View>
                         <View>
@@ -112,6 +113,8 @@ const Dashboard = () => {
                                 renderItem={({ item }) => newItem({ title: item.title })}
                                 keyExtractor={item => item.id}
                                 horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+
                             />
                         </View>
                     </ImageBackground>
